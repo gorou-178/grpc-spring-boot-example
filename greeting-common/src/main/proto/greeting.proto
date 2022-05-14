@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "messageType.proto";
+
+package com.study.grpc;
+
+option java_multiple_files = true;
+option java_package = "com.study.grpc";
+
+service GreetingService {
+    rpc greeting(GreetingRequest) returns (GreetingResponse) {
+    }
+}
+
+message GreetingRequest {
+    string message = 1;
+    MessageType messageType = 2;
+}
+
+message GreetingResponse {
+    string message = 1;
+}
